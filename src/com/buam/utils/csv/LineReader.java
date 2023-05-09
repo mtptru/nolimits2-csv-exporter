@@ -1,7 +1,7 @@
 package com.buam.utils.csv;
 
-import jdk.nashorn.api.scripting.URLReader;
-
+//import jdk.nashorn.api.scripting.URLReader;
+import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,8 +13,8 @@ public class LineReader {
 
     public static List<String> readLines(URL path) {
         try {
-            BufferedReader reader = new BufferedReader(new URLReader(path));
-
+            //BufferedReader reader = new BufferedReader(new URLReader(path));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(path.openStream()));
             String line;
 
             List<String> lines = new ArrayList<>();
